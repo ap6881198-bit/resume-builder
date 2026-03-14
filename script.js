@@ -52,11 +52,14 @@ expHTML += "<li>"+exp+"</li>"
 document.getElementById("userExperience").innerHTML = expHTML
 
 let prompt = `
-Write a professional resume summary of around 200 words.
+Write a professional resume profile summary of at least 180–200 words.
 
-Candidate Profession: ${profession}
+Profession: ${profession}
 Skills: ${skills}
 Experience: ${experience}
+
+Make it sound like a strong professional resume profile highlighting achievements, productivity, leadership and technical expertise.
+`
 
 The summary should:
 - Be professional and ATS friendly
