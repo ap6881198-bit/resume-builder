@@ -31,9 +31,25 @@ reader.readAsDataURL(photo)
 
 async function generateAI(){
 
-let skills=localStorage.getItem("skills")
+let skills = localStorage.getItem("skills").split(" ")
+
+let skillHTML = ""
+
+skills.forEach(skill=>{
+skillHTML += "<li>"+skill+"</li>"
+})
+
+document.getElementById("userSkills").innerHTML = skillHTML
 let profession=localStorage.getItem("profession")
-let experience=localStorage.getItem("experience")
+let experience = localStorage.getItem("experience").split(",")
+
+let expHTML = ""
+
+experience.forEach(exp=>{
+expHTML += "<li>"+exp+"</li>"
+})
+
+document.getElementById("userExperience").innerHTML = expHTML
 
 let prompt = `
 Write a professional resume summary of around 200 words.
