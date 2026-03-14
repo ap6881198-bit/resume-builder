@@ -111,13 +111,15 @@ skillsHTML += "<li>"+skill+"</li>"
 document.getElementById("userSkills").innerHTML = skillsHTML
 
 
-let experience = localStorage.getItem("experience").split(",")
+let experience = localStorage.getItem("experience")
 
-let expHTML = ""
+let expHTML = `
+<li>Developed and delivered multiple web development projects including ${experience}, focusing on responsive design and modern frontend practices.</li>
 
-experience.forEach(exp=>{
-expHTML += "<li>"+exp+"</li>"
-})
+<li>Built user-friendly interfaces using modern web technologies while ensuring performance, accessibility, and clean UI design.</li>
+
+<li>Collaborated on planning, development, and deployment of web applications, improving usability and overall website performance.</li>
+`
 
 document.getElementById("userExperience").innerHTML = expHTML;
 
