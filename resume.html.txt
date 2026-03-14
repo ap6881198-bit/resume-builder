@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Your Resume</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="resume">
+
+<div class="header">
+
+<img id="userPhoto">
+
+<div>
+<h1 id="userName"></h1>
+<h3 id="userProfession"></h3>
+</div>
+
+</div>
+
+<h2>About</h2>
+<p id="about">Generating AI summary...</p>
+
+<h2>Skills</h2>
+<p id="userSkills"></p>
+
+<h2>Experience</h2>
+<p id="userExperience"></p>
+
+</div>
+
+<button onclick="downloadPDF()">Generate PDF</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>

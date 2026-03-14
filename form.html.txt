@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Enter Details</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="form-container">
+
+<h1>Enter Your Details</h1>
+
+<label>Upload Photo</label>
+<input type="file" id="photo">
+
+<label>Full Name</label>
+<input type="text" id="name">
+
+<label>Profession</label>
+<input type="text" id="profession">
+
+<label>Skills</label>
+<textarea id="skills"></textarea>
+
+<label>Experience</label>
+<textarea id="experience"></textarea>
+
+<button onclick="generateResume()">Generate</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
