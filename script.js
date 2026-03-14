@@ -36,9 +36,11 @@ let profession=localStorage.getItem("profession")
 let experience=localStorage.getItem("experience")
 
 let prompt =
-`Write a professional resume summary for a ${profession}.
-Skills: ${skills}.
+`Write a short professional resume summary for a ${profession}. 
+Skills: ${skills}. 
 Experience: ${experience}.`
+
+try{
 
 let response = await fetch(
 "https://api-inference.huggingface.co/models/gpt2",
@@ -54,9 +56,21 @@ inputs:prompt
 }
 )
 
-let data=await response.json()
+let data = await response.json()
 
+if(data && data[0] && data[0].generated_text){
 return data[0].generated_text
+}
+else{
+return "A passionate professional skilled in "+skills+" with experience in "+experience+"."
+}
+
+}
+catch(error){
+
+return "A passionate professional skilled in "+skills+" with experience in "+experience+"."
+
+}
 
 }
 
