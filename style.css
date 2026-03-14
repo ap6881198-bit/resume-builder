@@ -222,3 +222,24 @@ font-size:15px;
 margin-top:6px;
 font-size:15px;
 }
+.skills-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+margin-top:10px;
+padding-left:20px;
+}
+
+.skills-grid li{
+font-size:16px;
+}
+.experience-list{
+margin-top:10px;
+padding-left:20px;
+}
+
+.experience-list li{
+margin-bottom:8px;
+font-size:16px;
+line-height:1.6;
+}
