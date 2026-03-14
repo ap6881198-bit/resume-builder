@@ -3,23 +3,46 @@ const API_KEY = "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"
 
 function generateResume(){
 
-let name=document.getElementById("name").value
-let profession=document.getElementById("profession").value
-let skills=document.getElementById("skills").value
-let experience=document.getElementById("experience").value
-let photo=document.getElementById("photo").files[0]
+let name = document.getElementById("name").value
+let profession = document.getElementById("profession").value
+let skills = document.getElementById("skills").value
+let experience = document.getElementById("experience").value
+let photoInput = document.getElementById("photo")
 
-let reader=new FileReader()
+if(!name || !profession || !skills || !experience){
+alert("Please fill all fields")
+return
+}
 
-reader.onload=function(){
+let reader = new FileReader()
 
-localStorage.setItem("photo",reader.result)
+if(photoInput.files.length > 0){
+
+reader.onload = function(){
+
+localStorage.setItem("photo", reader.result)
+localStorage.setItem("name", name)
+localStorage.setItem("profession", profession)
+localStorage.setItem("skills", skills)
+localStorage.setItem("experience", experience)
+
+window.location.href = "resume.html"
+
+}
+
+reader.readAsDataURL(photoInput.files[0])
+
+}else{
+
+localStorage.setItem("photo","")
 localStorage.setItem("name",name)
 localStorage.setItem("profession",profession)
 localStorage.setItem("skills",skills)
 localStorage.setItem("experience",experience)
 
-window.location="resume.html"
+window.location.href="resume.html"
+
+}
 
 }
 
