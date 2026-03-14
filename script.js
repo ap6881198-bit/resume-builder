@@ -121,7 +121,7 @@ let expHTML = `
 <li>Collaborated on planning, development, and deployment of web applications, improving usability and overall website performance.</li>
 `
 
-document.getElementById("userExperience").innerHTML = expHTML;
+document.getElementById("userExperience").innerHTML = expHTML
 
 generateAI().then(text=>{
 document.getElementById("about").innerText = text;
