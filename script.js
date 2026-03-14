@@ -35,10 +35,19 @@ let skills=localStorage.getItem("skills")
 let profession=localStorage.getItem("profession")
 let experience=localStorage.getItem("experience")
 
-let prompt =
-`Write a short professional resume summary for a ${profession}. 
-Skills: ${skills}. 
-Experience: ${experience}.`
+let prompt = `
+Write a professional resume summary of around 200 words.
+
+Candidate Profession: ${profession}
+Skills: ${skills}
+Experience: ${experience}
+
+The summary should:
+- Be professional and ATS friendly
+- Highlight achievements
+- Mention leadership, productivity and impact
+- Be written in strong resume language
+`
 
 try{
 
