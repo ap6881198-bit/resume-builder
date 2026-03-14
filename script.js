@@ -88,7 +88,7 @@ return "A motivated professional skilled in "+skills+" with experience in "+expe
 
 }
 catch(error){
-return "A motivated professional skilled in "+skills+" with experience in "+experience+".";
+return "A motivated and detail-oriented professional with strong expertise in "+skills+". Demonstrated experience in building and delivering multiple web projects while focusing on clean design, performance, and usability. Skilled in modern development practices and passionate about creating responsive, user-friendly digital solutions. Proven ability to solve technical challenges, collaborate effectively, and continuously learn new technologies to improve product quality and efficiency.";
 }
 
 }
@@ -101,12 +101,29 @@ document.getElementById("userPhoto").src = localStorage.getItem("photo");
 document.getElementById("userName").innerText = localStorage.getItem("name");
 document.getElementById("userProfession").innerText = localStorage.getItem("profession");
 
-document.getElementById("userSkills").innerText = localStorage.getItem("skills");
-document.getElementById("userExperience").innerText = localStorage.getItem("experience");
+let skills = localStorage.getItem("skills").split(" ")
+let skillsHTML = ""
+
+skills.forEach(skill=>{
+skillsHTML += "<li>"+skill+"</li>"
+})
+
+document.getElementById("userSkills").innerHTML = skillsHTML
+
+
+let experience = localStorage.getItem("experience").split(",")
+
+let expHTML = ""
+
+experience.forEach(exp=>{
+expHTML += "<li>"+exp+"</li>"
+})
+
+document.getElementById("userExperience").innerHTML = expHTML;
 
 generateAI().then(text=>{
 document.getElementById("about").innerText = text;
-});
+})
 
 }
 
