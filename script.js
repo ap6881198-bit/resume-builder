@@ -2,6 +2,7 @@ const API_KEY = "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"
 
 
 function generateResume(){
+  alert("Button clicked");
 
 let name = document.getElementById("name").value
 let profession = document.getElementById("profession").value
